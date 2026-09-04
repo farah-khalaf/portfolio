@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOTP Token Security Analyzer — Farah Muhammad Khalaf</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,380..600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a href="index.html" class="mark">Farah Muhammad Khalaf</a>
+    <nav class="primary-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html" class="current">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <section class="project-head" style="border-top:none; padding-bottom: 10px;">
+      <span class="tag" style="color:var(--accent-warm); font-size:0.85rem;">Web App · Applied Security</span>
+      <h1 style="font-size: clamp(1.9rem, 4vw, 2.5rem); margin-top:10px;">TOTP Token Security Analyzer</h1>
+      <p class="lead soft" style="font-size:1.05rem;">A self-contained tool for exploring how Time-based One-Time Passwords actually behave — how strong the shared secret needs to be, how the 30-second validity window works, and what a naive brute-force attempt against it looks like.</p>
+      <div class="meta-row">
+        <span class="chip">HTML / CSS / JavaScript</span>
+        <span class="chip">Client-side, no backend</span>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head"><h2>Try it</h2>
+        <p class="soft">This is the actual project running — not a screenshot. Enter a secret key and a 6-digit token, or just watch the generated TOTP roll over every 30 seconds.</p>
+      </div>
+      <div class="demo-frame">
+        <div class="demo-bar"><span>demos/totp/index.html</span><span>live</span></div>
+        <iframe src="demos/totp/index.html" title="TOTP Token Security Analyzer live demo" loading="lazy"></iframe>
+      </div>
+    </section>
+
+    <section>
+      <div class="detail-block" style="margin-top:0;">
+        <h2>What it checks</h2>
+        <ul class="bullets">
+          <li>Validates that the entered secret key is long enough to resist brute-forcing, and flags weak, short secrets.</li>
+          <li>Confirms the submitted token matches the expected 6-digit numeric format before treating it as valid.</li>
+          <li>Generates a fresh 6-digit TOTP every 30 seconds with a visible countdown, mirroring how real TOTP validity windows work.</li>
+          <li>Verifies a submitted token against the currently active one, and rejects it once the window has expired.</li>
+          <li>Runs a simulated attack that models rate-limiting: past a handful of attempts, further guesses are blocked.</li>
+        </ul>
+      </div>
+
+      <div class="callout">
+        <p><strong>Why it matters:</strong> most TOTP implementations are only as strong as their weakest supporting rule — a short secret, a missing expiry check, or no rate limiting on verification attempts. This project isolates each of those checks so they're easy to reason about individually.</p>
+      </div>
+    </section>
+
+    <div class="nav-between">
+      <a href="project-ai.html">← Hnefatafl — Viking Chess AI</a>
+      <a href="project-sqli.html">SQL Injection Demo →</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-links">
+      <a href="mailto:farahmuhammadkhalaf@gmail.com">farahmuhammadkhalaf@gmail.com</a>
+      <a href="https://linkedin.com/in/farah-muhammad-a29334345">LinkedIn</a>
+      <span class="foot-note">Giza, Egypt</span>
+    </div>
+    <div class="foot-note">© 2026 Farah Muhammad Khalaf</div>
+  </div>
+</footer>
+
+</body>
+</html>

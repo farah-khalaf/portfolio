@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hnefatafl — Viking Chess AI — Farah Muhammad Khalaf</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,380..600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a href="index.html" class="mark">Farah Muhammad Khalaf</a>
+    <nav class="primary-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html" class="current">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <section class="project-head" style="border-top:none; padding-bottom: 10px;">
+      <span class="tag" style="color:var(--accent-warm); font-size:0.85rem;">Artificial Intelligence · CS361, Cairo University · Team project</span>
+      <h1 style="font-size: clamp(1.9rem, 4vw, 2.5rem); margin-top:10px;">Hnefatafl — Viking Chess AI</h1>
+      <p class="lead soft" style="font-size:1.05rem;">A full Human-vs-Computer implementation of Hnefatafl (Tafl / "Viking Chess"), an asymmetric two-player strategy game, with a computer opponent that plans its moves using alpha-beta pruning. Built as a group project for the Artificial Intelligence course.</p>
+      <div class="meta-row">
+        <span class="chip">Alpha-beta pruning</span>
+        <span class="chip">Game AI</span>
+        <span class="chip">Team of 3–5</span>
+      </div>
+    </section>
+
+    <section>
+      <div class="detail-block" style="margin-top:0;">
+        <h2>The game</h2>
+        <p class="soft">Hnefatafl is asymmetric: 12 defenders and a king start in the center of the board and must get the king to any corner, while 24 attackers surround the board trying to trap him. All pieces move like a rook in chess, and pieces are captured by being sandwiched between two opposing pieces.</p>
+      </div>
+
+      <div class="detail-block">
+        <h2>What the AI actually does</h2>
+        <ul class="bullets">
+          <li>A game controller manages turn order between the human and the computer, applies each move, updates the board, and detects the end of the game — either the king escaping to a corner or being fully surrounded.</li>
+          <li>Board state is represented so that legal rook-style moves, captures by custodial sandwiching, and the special throne/corner capture rules can all be evaluated directly from it.</li>
+          <li>A utility function scores a given board state from a player's perspective, weighing piece count, the king's mobility, and proximity to escape corners.</li>
+          <li>The computer's moves are chosen with alpha-beta pruning — no other search algorithm — searched to a depth that scales with the selected difficulty.</li>
+          <li>Three difficulty levels (Easy, Medium, Hard) are implemented purely by varying that search depth.</li>
+        </ul>
+      </div>
+
+      <div class="callout">
+        <p><strong>Team execution:</strong> this was built and delivered exactly to the course's specification, split across teammates by component — board representation, the controller, move generation, the utility function, and the alpha-beta search — then integrated and demoed as a working Human vs. Computer game.</p>
+      </div>
+    </section>
+
+    <div class="nav-between">
+      <a href="project-library.html">← University Library System</a>
+      <a href="project-totp.html">TOTP Token Security Analyzer →</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-links">
+      <a href="mailto:farahmuhammadkhalaf@gmail.com">farahmuhammadkhalaf@gmail.com</a>
+      <a href="https://linkedin.com/in/farah-muhammad-a29334345">LinkedIn</a>
+      <span class="foot-note">Giza, Egypt</span>
+    </div>
+    <div class="foot-note">© 2026 Farah Muhammad Khalaf</div>
+  </div>
+</footer>
+
+</body>
+</html>
