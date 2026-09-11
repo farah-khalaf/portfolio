@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOTP Token Security Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>TOTP Token Security Analyzer</h1>
+
+        <div class="section">
+            <label>Secret Key:</label>
+            <input type="text" id="secret" placeholder="Enter your secret">
+        </div>
+
+        <div class="section">
+            <label>User TOTP Input:</label>
+            <input type="text" id="userTotp" placeholder="Enter TOTP">
+        </div>
+
+        <div class="buttons">
+            <button onclick="analyze()">Analyze Secret & Token</button>
+            <button onclick="verifyTOTP()">Verify TOTP</button>
+        </div>
+
+        <div id="result"></div>
+
+        <div class="totp-section">
+            <h2>Generated TOTP: <span id="generatedTotp">000000</span></h2>
+            <h3>Time Left: <span id="timer">30</span> sec</h3>
+        </div>
+
+        <div class="report">
+            <h2>Security Report</h2>
+            <ul id="report"></ul>
+        </div>
+
+        <div class="attack">
+            <button onclick="simulateAttack()">Simulate Attack</button>
+            <p id="attackResult"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

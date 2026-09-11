@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f4f8;
+    color: #333;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+.section {
+    margin-bottom: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 5px;
+    background: #007bff;
+    color: #fff;
+    font-weight: bold;
+}
+
+    button:hover {
+        background: #0056b3;
+    }
+
+#result {
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.totp-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.report {
+    margin-top: 20px;
+}
+
+.attack {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#attackResult {
+    font-weight: bold;
+}
